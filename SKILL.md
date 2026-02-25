@@ -117,7 +117,13 @@ Start with `00-project-overview.md` (what are we building and why), then identif
 - Search
 - File storage / media handling
 
-For each applicable domain, produce a note in `notes/`. Number sequentially. Maintain `notes/_index.md` as notes are created.
+For each applicable domain, produce a note in `notebook/`. Number sequentially. Maintain `notebook/_index.md` as notes are created. Initialize `notebook/lessons.md` alongside the index if it doesn't exist yet:
+
+```markdown
+# Lessons
+
+What not to do. Read this every session.
+```
 
 Finish with `NN-tech-stack.md` (justify every choice) and `NN-project-status.md` (what's specced, what's remaining).
 
@@ -125,7 +131,7 @@ Finish with `NN-tech-stack.md` (justify every choice) and `NN-project-status.md`
 
 Before proceeding, verify ALL of these:
 
-1. `notes/_index.md` exists and lists all notes
+1. `notebook/_index.md` exists and lists all notes
 2. At least `00-project-overview.md` + one note per identified domain exists
 3. `NN-tech-stack.md` exists with justified choices
 4. No notes have unresolved `## Open Questions` that would block build planning
@@ -216,6 +222,8 @@ For each stage:
 
 **Scope creep:** If you're adding things not in the stage doc, stop. Either add it to a future stage in `_build-order.md` or discard it.
 
+**Capture lessons during execution:** When a constraint, failure, or non-obvious gotcha is discovered during building, append a one-liner to `notebook/lessons.md` and add a note to `notebook/_index.md`. These prevent the same mistakes in later stages and future sessions. If the `/save` command is available (notebook skill installed), use it. Otherwise, write directly.
+
 ---
 
 ## State Tracking
@@ -270,17 +278,18 @@ tier: [light | standard | heavy]
 When resuming (user says "resume", provides a project path, or PROJECT_STATE.md exists):
 
 1. Read `PROJECT_STATE.md` — parse `Current Phase`, `current_stage`, `last_completed_stage`
-2. Read `notes/_index.md` (if exists)
-3. Read `build_plan/_build-order.md` (if exists)
-4. If in execute phase, read the current stage document
-5. Summarize back to user:
+2. Read `notebook/_index.md` (if exists)
+3. Read `notebook/lessons.md` (if exists) — know what NOT to repeat
+4. Read `build_plan/_build-order.md` (if exists)
+5. If in execute phase, read the current stage document
+6. Summarize back to user:
    - "You're in Phase [X], working on [description]"
    - "Last completed: [what]"
    - "Next action: [what]"
-6. Ask: "Has anything changed since last session? Any new constraints or direction changes?"
-7. Wait for confirmation, then continue from `## Next Action`
+7. Ask: "Has anything changed since last session? Any new constraints or direction changes?"
+8. Wait for confirmation, then continue from `## Next Action`
 
-If `PROJECT_STATE.md` is missing or corrupted, scan the project directory for artifacts (notes/, build_plan/, src/) and reconstruct state from what exists. Ask the user to confirm before proceeding.
+If `PROJECT_STATE.md` is missing or corrupted, scan the project directory for artifacts (notebook/, build_plan/, src/) and reconstruct state from what exists. Ask the user to confirm before proceeding.
 
 ---
 
@@ -289,8 +298,9 @@ If `PROJECT_STATE.md` is missing or corrupted, scan the project directory for ar
 ```
 project/
 ├── PROJECT_STATE.md           # Current snapshot (machine-readable)
-├── notes/                     # Phase 1 output
-│   ├── _index.md
+├── notebook/                  # Notes, design docs, lessons (shared with /notebook skill)
+│   ├── _index.md              # Rich index — primary context recovery doc
+│   ├── lessons.md             # Anti-loop cheat sheet — failures and gotchas
 │   ├── 00-project-overview.md
 │   └── ...
 ├── build_plan/                # Phase 2 output

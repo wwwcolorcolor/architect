@@ -72,7 +72,7 @@ Each note is a collaborative artifact, not a monologue:
 ### Note Structure
 
 ```
-notes/
+notebook/
 ├── 00-project-overview.md          # Vision, what we're building, why
 ├── 01-component-structure.md       # How the pieces connect
 ├── 02-[domain-a].md                # Deep dive on domain A
@@ -92,7 +92,7 @@ notes/
 ### Gate Check
 
 All of these must be true:
-1. `notes/_index.md` exists listing all notes
+1. `notebook/_index.md` exists listing all notes
 2. At least one note per identified domain
 3. Tech stack note with justified choices
 4. No unresolved open questions that would block build planning

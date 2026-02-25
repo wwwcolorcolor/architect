@@ -58,8 +58,9 @@ Automatically adapts to project scope:
 ```
 project/
 ├── PROJECT_STATE.md        # Current snapshot (machine-readable)
-├── notes/                  # Design notes per domain
-│   ├── _index.md
+├── notebook/               # Design notes, lessons (compatible with /notebook skill)
+│   ├── _index.md           # Rich index of all notes
+│   ├── lessons.md          # Anti-loop cheat sheet — failures and gotchas
 │   └── ...
 ├── build_plan/             # Stage documents
 │   ├── _build-order.md
@@ -73,3 +74,7 @@ project/
 The core rule: never work from one giant plan. Atomize into stages small enough to hold entirely in context. Stage documents are written 2-3 at a time (not all upfront) because later stages written before earlier stages are built are based on assumptions that will be wrong.
 
 If something breaks mid-build, the methodology has explicit protocols for going back, fixing, and propagating changes through dependent stages.
+
+## Works with /notebook
+
+Architect uses the same `notebook/` folder as the [notebook skill](https://github.com/wwwcolorcolor/notebook-skill). If you have both installed, `/save` works seamlessly inside architect projects to capture failures and lessons during the build phase. If you only have architect, the notes infrastructure is built in — notebook is not required.
