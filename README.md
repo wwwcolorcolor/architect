@@ -8,15 +8,25 @@ None. This skill is pure methodology — no external tools or API keys required.
 
 ## Install
 
+**Claude Code:**
+
 ```bash
 claude skill add --url https://github.com/wwwcolorcolor/architect-skill
 ```
 
-Verify it installed:
+**Other tools** (Cursor, Windsurf, Copilot, Gemini, Codex, Aider, Cline, etc.):
 
-```bash
-claude skill list
-```
+Copy the contents of [`SKILL.md`](./SKILL.md) into your tool's rules file:
+
+| Tool | File |
+|------|------|
+| Cursor | `.cursorrules` or `.cursor/rules` |
+| Windsurf | `.windsurfrules` |
+| Copilot | `.github/copilot-instructions.md` |
+| Gemini | `.gemini/style-guide.md` |
+| Codex | `AGENTS.md` |
+| Aider | `.aider/conventions.md` |
+| Cline / Roo Code | `.clinerules` |
 
 ## Usage
 
