@@ -87,4 +87,8 @@ If something breaks mid-build, the methodology has explicit protocols for going 
 
 ## Works with /notebook
 
-Architect uses the same `notebook/` folder as the [notebook skill](https://github.com/wwwcolorcolor/notebook-skill). If you have both installed, `/save` works seamlessly inside architect projects to capture failures and lessons during the build phase. If you only have architect, the notes infrastructure is built in — notebook is not required.
+Architect works on its own, but paired with notebook you get `/save` — a one-command shortcut to capture failures, constraints, and lessons mid-build. Without it, architect still writes notes during each phase, but you lose the ability to save on the fly when something breaks or a non-obvious workaround comes up. Both use the same `notebook/` folder. Either works independently, both together is the best experience.
+
+```bash
+claude skill add --url https://github.com/wwwcolorcolor/notebook-skill
+```
