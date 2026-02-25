@@ -117,7 +117,7 @@ Start with `00-project-overview.md` (what are we building and why), then identif
 - Search
 - File storage / media handling
 
-For each applicable domain, produce a note in `notebook/`. Number sequentially. Maintain `notebook/_index.md` as notes are created. Initialize `notebook/lessons.md` alongside the index if it doesn't exist yet:
+For each applicable domain, produce a note in `notebook/`. Number sequentially. Maintain `notebook/_index.md` as notes are created. Initialize `notebook/lessons.md` alongside the index if it doesn't exist yet. Add `notebook/` to `.gitignore` if not already present (process notes are AI working memory, not public documentation):
 
 ```markdown
 # Lessons
