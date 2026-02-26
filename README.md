@@ -11,7 +11,7 @@ None. This skill is pure methodology — no external tools or API keys required.
 **Claude Code:**
 
 ```bash
-claude skill add --url https://github.com/wwwcolorcolor/architect-skill
+claude skill add --url https://github.com/catcatcatai/architect-skill
 ```
 
 **Other tools** (Cursor, Windsurf, Copilot, Gemini, Codex, Aider, Cline, etc.):
@@ -90,5 +90,5 @@ If something breaks mid-build, the methodology has explicit protocols for going 
 Architect works on its own, but paired with notebook you get `/save` — a one-command shortcut to capture failures, constraints, and lessons mid-build. Without it, architect still writes notes during each phase, but you lose the ability to save on the fly when something breaks or a non-obvious workaround comes up. Both use the same `notebook/` folder. Either works independently, both together is the best experience.
 
 ```bash
-claude skill add --url https://github.com/wwwcolorcolor/notebook-skill
+claude skill add --url https://github.com/catcatcatai/notebook-skill
 ```
